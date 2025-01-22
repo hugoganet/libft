@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hugoganet <hugoganet@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:35:22 by hganet            #+#    #+#             */
-/*   Updated: 2024/12/03 11:13:03 by hganet           ###   ########.fr       */
+/*   Updated: 2025/01/22 16:12:30 by hugoganet        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	size_t	s1_len;
 	size_t	s2_len;
-	size_t	i;
-	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -34,14 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)ft_calloc((s1_len + s2_len + 1), sizeof(char));
 	if (!result)
 		return (NULL);
-	i = 0;
-	while (i < s1_len)
-	{
-		result[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (j < s2_len)
-		result[i++] = s2[j++];
+	ft_memcpy(result, s1, s1_len);
+	ft_memcpy(result, s2, s2_len);
 	return (result);
 }
