@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hugoganet <hugoganet@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:58:01 by hganet            #+#    #+#             */
-/*   Updated: 2024/12/03 11:11:27 by hganet           ###   ########.fr       */
+/*   Updated: 2025/01/22 16:20:46 by hugoganet        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (NULL);
 	i = 0;
 	while (i < n)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
 		i++;
 	}
 	return ((char *)dest);
