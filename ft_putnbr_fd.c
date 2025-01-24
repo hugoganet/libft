@@ -6,7 +6,7 @@
 /*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 13:40:33 by hganet            #+#    #+#             */
-/*   Updated: 2024/12/03 11:11:47 by hganet           ###   ########.fr       */
+/*   Updated: 2025/01/24 09:43:17 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
  */
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-
 	if (fd < 0)
 		return ;
 	if (n == -2147483648)
@@ -35,6 +33,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n > 9)
 		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	write(fd, &c, 1);
+	write(fd, &"0123456789"[n % 10], 1);
 }
