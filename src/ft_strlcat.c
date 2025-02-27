@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hugoganet <hugoganet@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 10:16:47 by hganet            #+#    #+#             */
-/*   Updated: 2024/12/13 20:26:58 by hganet           ###   ########.fr       */
+/*   Updated: 2025/02/27 15:43:20 by hugoganet        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
 	int			j;
 	size_t		i;
+	size_t		dst_i_len;
 
 	if (!dst && siz == 0)
 		return (ft_strlen(src));
