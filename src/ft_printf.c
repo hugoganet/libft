@@ -6,10 +6,11 @@
 /*   By: hugoganet <hugoganet@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 17:45:37 by hganet            #+#    #+#             */
-/*   Updated: 2025/02/27 15:44:08 by hugoganet        ###   ########.fr       */
+/*   Updated: 2025/02/27 15:50:05 by hugoganet        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "libft.h"
 
 int	ft_putstr_len_fd(char *str, int fd);
