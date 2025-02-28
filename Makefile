@@ -32,6 +32,7 @@ SRC = ft_isalpha.c \
 			ft_atoi.c \
 			ft_strmapi.c \
 			ft_striteri.c \
+			ft_check_base.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
@@ -39,6 +40,8 @@ SRC = ft_isalpha.c \
 			ft_calloc.c \
 			ft_printf.c \
 			process_args.c \
+			get_next_line.c \
+			get_next_line_utils.c \
 
 # Full path to the source files
 SRCS := $(addprefix $(SRC_DIR)/, $(SRC))
