@@ -41,19 +41,18 @@ static char	*read_and_store(int fd, char *buffered_data)
 	{
 		// Read and store into the buffer
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		// printf("bytes_read = %zi\n", bytes_read);
 		if (bytes_read == -1) // Check for error
 		{
 			free(buffer);
 			perror("Error reading file"); // ? Can I use perror ?
 			return (NULL);
 		}
-		if (bytes_read > 0)
+		if (bytes_read > 0) // If bytes were read
 		{
 			buffered_data = ft_strjoin_gnl(buffered_data, buffer, (size_t)bytes_read); // Join the buffer in buffered_data
 		}
 	}
-	free(buffer); // Free the buffer before exiting the function
+	free(buffer); // Free the temp buffer before exiting the function
 	return (buffered_data);
 }
 
@@ -120,8 +119,6 @@ char	*get_next_line(int fd)
 	static char	*buffered_data;
 	char		*line;
 
-	// ft_printf("BUFFER_SIZE = %i\n", BUFFER_SIZE);
-	// ft_printf("????\n");
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	// Read and store in buffer
@@ -129,14 +126,11 @@ char	*get_next_line(int fd)
 	if (!buffered_data)
 		return (NULL);
 	// Extract last line
-	// printf("%s", buffered_data);
 	line = extract_line(buffered_data);
-	//printf("%s", line);
 	// Update the buffer by removing the last line
 	buffered_data = update_buffer(buffered_data);
 	// Return the line
 	return (line);
-	// return (buffered_data);
 }
 
 
