@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugoganet <hugoganet@student.42.fr>        +#+  +:+       +#+        */
+/*   By: hganet <hganet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:35:22 by hganet            #+#    #+#             */
-/*   Updated: 2025/01/22 16:12:30 by hugoganet        ###   ########.fr       */
+/*   Updated: 2025/03/31 17:08:17 by hganet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!result)
 		return (NULL);
 	ft_memcpy(result, s1, s1_len);
-	ft_memcpy(result, s2, s2_len);
+	ft_memcpy(result + s1_len, s2, s2_len);
 	return (result);
 }
